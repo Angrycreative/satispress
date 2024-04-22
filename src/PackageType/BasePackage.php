@@ -410,7 +410,7 @@ class BasePackage implements \ArrayAccess, Package {
 	 * @param string $name Property name.
 	 * @return mixed
 	 */
-	public function offsetGet( $name ) {
+	public function offsetGet( $name ): mixed {
 		$method = "get_{$name}";
 
 		if ( ! method_exists( $this, $method ) ) {
@@ -428,7 +428,7 @@ class BasePackage implements \ArrayAccess, Package {
 	 * @param string $name  Property name.
 	 * @param array  $value Property value.
 	 */
-	public function offsetSet( $name, $value ) {
+	public function offsetSet( $name, $value ): void {
 		// Prevent properties from being modified.
 	}
 
@@ -439,7 +439,7 @@ class BasePackage implements \ArrayAccess, Package {
 	 *
 	 * @param string $name Property name.
 	 */
-	public function offsetUnset( $name ) {
+	public function offsetUnset( $name ): void {
 		// Prevent properties from being modified.
 	}
 }
